@@ -1,5 +1,5 @@
 
-# # Model Fit in Linear Regression - Lab
+## Model Fit in Linear Regression - Lab
 
 ## Introduction
 In this lab, you'll learn how to evaluate your model results, and you'll learn methods to select the appropriate features using stepwise selection.
