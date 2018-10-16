@@ -292,7 +292,7 @@ linreg.fit(X[selected_columns],y)
 
 
 
-Now, predict $y$ using your model. you can use `.predict()` in scikit-learn
+Now, predict $\hat y$ using your model. you can use `.predict()` in scikit-learn
 
 
 ```python
