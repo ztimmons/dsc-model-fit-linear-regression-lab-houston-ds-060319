@@ -122,10 +122,6 @@ def stepwise_selection(X, y,
     return included
 ```
 
-    /Users/lore.dirick/anaconda3/lib/python3.6/site-packages/statsmodels/compat/pandas.py:56: FutureWarning: The pandas.core.datetools module is deprecated and will be removed in a future version. Please use the pandas.tseries module instead.
-      from pandas.core import datetools
-
-
 
 ```python
 X = boston_features
@@ -177,10 +173,10 @@ model.summary()
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   215.7</td> 
 </tr>
 <tr>
-  <th>Date:</th>             <td>Mon, 15 Oct 2018</td> <th>  Prob (F-statistic):</th> <td>2.69e-156</td>
+  <th>Date:</th>             <td>Thu, 08 Nov 2018</td> <th>  Prob (F-statistic):</th> <td>2.69e-156</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>21:15:33</td>     <th>  Log-Likelihood:    </th> <td> -1461.3</td> 
+  <th>Time:</th>                 <td>13:29:19</td>     <th>  Log-Likelihood:    </th> <td> -1461.3</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   506</td>      <th>  AIC:               </th> <td>   2941.</td> 
@@ -260,10 +256,6 @@ selector = RFE(linreg, n_features_to_select = 5)
 selector = selector.fit(X, y)
 ```
 
-    /Users/lore.dirick/anaconda3/lib/python3.6/site-packages/sklearn/utils/validation.py:578: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
-      y = column_or_1d(y, warn=True)
-
-
 
 ```python
 selector.support_ 
@@ -314,7 +306,7 @@ $R^2_{adj}= 1-(1-R^2)\dfrac{n-1}{n-p-1}$
 SS_Residual = np.sum((y-yhat)**2)
 SS_Total = np.sum((y-np.mean(y))**2)
 r_squared = 1 - (float(SS_Residual))/SS_Total
-adjusted_r_squared = 1 - (1-r_squared)*(len(y)-1)/(len(y)-X.shape[1]-1)
+adjusted_r_squared = 1 - (1-r_squared)*(len(y)-1)/(len(y)-X[selected_columns].shape[1]-1)
 ```
 
 
@@ -338,7 +330,7 @@ adjusted_r_squared
 
 
 
-    price    0.735652
+    price    0.740411
     dtype: float64
 
 
